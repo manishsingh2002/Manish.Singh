@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin - Manage Your Data</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Portfolio Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#personal" class="nav-link active"><i class="fas fa-user"></i> Personal Info</a></li>
+                    <li><a href="#professional" class="nav-link"><i class="fas fa-briefcase"></i> Professional</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-history"></i> Experience</a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
+                    <li><a href="#achievements" class="nav-link"><i class="fas fa-trophy"></i> Achievements</a></li>
+                    <li><a href="#blog" class="nav-link"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="#talks" class="nav-link"><i class="fas fa-microphone"></i> Talks</a></li>
+                    <li><a href="#opensource" class="nav-link"><i class="fas fa-code-branch"></i> Open Source</a></li>
+                    <li><a href="#testimonials" class="nav-link"><i class="fas fa-comments"></i> Testimonials</a></li>
+                    <li><a href="#services" class="nav-link"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="#interests" class="nav-link"><i class="fas fa-heart"></i> Interests</a></li>
+                    <li><a href="#languages" class="nav-link"><i class="fas fa-language"></i> Languages</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#seo" class="nav-link"><i class="fas fa-search"></i> SEO</a></li>
+                    <li><a href="#theme" class="nav-link"><i class="fas fa-paint-brush"></i> Theme</a></li>
+                    <li><a href="#analytics" class="nav-link"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Manage Portfolio Data</h1>
+                <div class="header-actions">
+                    <button id="save-all" class="btn btn-primary"><i class="fas fa-save"></i> Save All</button>
+                    <button id="export-json" class="btn btn-secondary"><i class="fas fa-download"></i> Export JSON</button>
+                    <button id="import-json" class="btn btn-secondary"><i class="fas fa-upload"></i> Import JSON</button>
+                    <button id="reset-form" class="btn btn-danger"><i class="fas fa-undo"></i> Reset</button>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <form id="portfolio-form">
+                    <!-- Personal Info Section -->
+                    <section id="personal" class="form-section active">
+                        <h2>Personal Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Schema Version</label>
+                                <input type="text" name="schemaVersion" value="1.0.0">
+                            </div>
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" name="personalInfo.name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Professional Title *</label>
+                                <input type="text" name="personalInfo.title" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tagline</label>
+                                <input type="text" name="personalInfo.tagline">
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" name="personalInfo.email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" name="personalInfo.phone">
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" name="personalInfo.location.city">
+                            </div>
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" name="personalInfo.location.country">
+                            </div>
+                            <div class="form-group">
+                                <label>Timezone</label>
+                                <input type="text" name="personalInfo.location.timezone">
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input type="checkbox" name="personalInfo.location.remote" checked>
+                                    Remote Available
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Profile Image URL</label>
+                                <input type="url" name="personalInfo.profileImage.url">
+                            </div>
+                            <div class="form-group">
+                                <label>Image Alt Text</label>
+                                <input type="text" name="personalInfo.profileImage.alt">
+                            </div>
+                            <div class="form-group">
+                                <label>Pronouns</label>
+                                <select name="personalInfo.pronouns">
+                                    <option value="he/him">He/Him</option>
+                                    <option value="she/her">She/Her</option>
+                                    <option value="they/them">They/Them</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Social Profiles (Dynamic) -->
+                        <div class="array-field">
+                            <h3>Social Profiles</h3>
+                            <div id="social-profiles-container" class="array-items"></div>
+                            <button type="button" class="btn-add-item" data-array="socialProfiles">
+                                <i class="fas fa-plus"></i> Add Social Profile
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Professional Summary -->
+                    <section id="professional" class="form-section">
+                        <h2>Professional Summary</h2>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Brief Summary</label>
+                                <textarea name="professionalSummary.summary" rows="3"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Detailed Bio</label>
+                                <textarea name="professionalSummary.detailedBio" rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Years of Experience</label>
+                                <input type="number" name="professionalSummary.yearsOfExperience" min="0">
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input type="checkbox" name="professionalSummary.availableForHire">
+                                    Available for Hire
+                                </label>
+                            </div>
+                            
+                            <!-- Open to Work -->
+                            <div class="form-group full-width">
+                                <h4>Open to Work</h4>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="professionalSummary.openToWork.status">
+                                        Open to Opportunities
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Resume -->
+                            <div class="form-group">
+                                <label>Resume URL</label>
+                                <input type="url" name="professionalSummary.resume.url">
+                            </div>
+                            <div class="form-group">
+                                <label>Resume Format</label>
+                                <select name="professionalSummary.resume.format">
+                                    <option value="PDF">PDF</option>
+                                    <option value="DOC">DOC</option>
+                                    <option value="DOCX">DOCX</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Technical Skills -->
+                    <section id="skills" class="form-section">
+                        <h2>Technical Skills</h2>
+                        
+                        <!-- Languages -->
+                        <div class="array-field">
+                            <h3>Programming Languages</h3>
+                            <div id="languages-container" class="array-items"></div>
+                            <button type="button" class="btn-add-item" data-array="languages">
+                                <i class="fas fa-plus"></i> Add Language
+                            </button>
+                        </div>
+
+                        <!-- Frameworks -->
+                        <div class="array-field">
+                            <h3>Frameworks</h3>
+                            <div id="frameworks-container" class="array-items"></div>
+                            <button type="button" class="btn-add-item" data-array="frameworks">
+                                <i class="fas fa-plus"></i> Add Framework
+                            </button>
+                        </div>
+
+                        <!-- Databases -->
+                        <div class="array-field">
+                            <h3>Databases</h3>
+                            <div id="databases-container" class="array-items"></div>
+                            <button type="button" class="btn-add-item" data-array="databases">
+                                <i class="fas fa-plus"></i> Add Database
+                            </button>
+                        </div>
+
+                        <!-- Dev Tools -->
+                        <div class="array-field">
+                            <h3>Development Tools</h3>
+                            <div id="devTools-container" class="array-items"></div>
+                            <button type="button" class="btn-add-item" data-array="devTools">
+                                <i class="fas fa-plus"></i> Add Tool
+                            </button>
+                        </div>
+
+                        <!-- Specialties -->
+                        <div class="array-field">
+                            <h3>Specialties</h3>
+                            <div id="specialties-container" class="array-items"></div>
+                            <button type="button" class="btn-add-item" data-array="specialties">
+                                <i class="fas fa-plus"></i> Add Specialty
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Projects -->
+                    <section id="projects" class="form-section">
+                        <h2>Projects</h2>
+                        <div id="projects-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="projects">
+                            <i class="fas fa-plus"></i> Add Project
+                        </button>
+                    </section>
+
+                    <!-- Work Experience -->
+                    <section id="experience" class="form-section">
+                        <h2>Work Experience</h2>
+                        <div id="workExperience-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="workExperience">
+                            <i class="fas fa-plus"></i> Add Experience
+                        </button>
+                    </section>
+
+                    <!-- Education -->
+                    <section id="education" class="form-section">
+                        <h2>Education</h2>
+                        <div id="education-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="education">
+                            <i class="fas fa-plus"></i> Add Education
+                        </button>
+                    </section>
+
+                    <!-- Certifications -->
+                    <section id="certifications" class="form-section">
+                        <h2>Certifications</h2>
+                        <div id="certifications-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="certifications">
+                            <i class="fas fa-plus"></i> Add Certification
+                        </button>
+                    </section>
+
+                    <!-- Achievements -->
+                    <section id="achievements" class="form-section">
+                        <h2>Achievements</h2>
+                        <div id="achievements-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="achievements">
+                            <i class="fas fa-plus"></i> Add Achievement
+                        </button>
+                    </section>
+
+                    <!-- Blog -->
+                    <section id="blog" class="form-section">
+                        <h2>Blog</h2>
+                        <div class="form-group">
+                            <label>Blog Platform</label>
+                            <input type="text" name="blog.platform">
+                        </div>
+                        <div id="blog-posts-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="blog.posts">
+                            <i class="fas fa-plus"></i> Add Blog Post
+                        </button>
+                    </section>
+
+                    <!-- Talks -->
+                    <section id="talks" class="form-section">
+                        <h2>Talks & Presentations</h2>
+                        <div id="talks-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="talks">
+                            <i class="fas fa-plus"></i> Add Talk
+                        </button>
+                    </section>
+
+                    <!-- Open Source -->
+                    <section id="opensource" class="form-section">
+                        <h2>Open Source Contributions</h2>
+                        <div id="openSource-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="openSource">
+                            <i class="fas fa-plus"></i> Add Contribution
+                        </button>
+                    </section>
+
+                    <!-- Testimonials -->
+                    <section id="testimonials" class="form-section">
+                        <h2>Testimonials</h2>
+                        <div id="testimonials-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="testimonials">
+                            <i class="fas fa-plus"></i> Add Testimonial
+                        </button>
+                    </section>
+
+                    <!-- Services -->
+                    <section id="services" class="form-section">
+                        <h2>Services</h2>
+                        <div id="services-container" class="complex-array"></div>
+                        <button type="button" class="btn-add-item" data-array="services">
+                            <i class="fas fa-plus"></i> Add Service
+                        </button>
+                    </section>
+
+                    <!-- Interests -->
+                    <section id="interests" class="form-section">
+                        <h2>Interests & Hobbies</h2>
+                        <div id="interests-container" class="array-items"></div>
+                        <button type="button" class="btn-add-item" data-array="interests">
+                            <i class="fas fa-plus"></i> Add Interest
+                        </button>
+                    </section>
+
+                    <!-- Languages -->
+                    <section id="languages" class="form-section">
+                        <h2>Languages</h2>
+                        <div id="languages-natural-container" class="array-items"></div>
+                        <button type="button" class="btn-add-item" data-array="languages">
+                            <i class="fas fa-plus"></i> Add Language
+                        </button>
+                    </section>
+
+                    <!-- Contact Settings -->
+                    <section id="contact" class="form-section">
+                        <h2>Contact Settings</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Contact Email</label>
+                                <input type="email" name="contact.email">
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input type="checkbox" name="contact.contactForm.enabled" checked>
+                                    Enable Contact Form
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>reCAPTCHA</label>
+                                <input type="checkbox" name="contact.contactForm.recaptcha">
+                            </div>
+                            <div class="form-group">
+                                <label>Calendly URL</label>
+                                <input type="url" name="contact.calendly">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEO -->
+                    <section id="seo" class="form-section">
+                        <h2>SEO Settings</h2>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>SEO Title</label>
+                                <input type="text" name="seo.title">
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Meta Description</label>
+                                <textarea name="seo.description" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input type="text" name="seo.author">
+                            </div>
+                            <div class="form-group">
+                                <label>OG Image URL</label>
+                                <input type="url" name="seo.ogImage">
+                            </div>
+                            <div class="form-group">
+                                <label>Favicon URL</label>
+                                <input type="url" name="seo.favicon">
+                            </div>
+                            <div class="form-group">
+                                <label>Twitter Handle</label>
+                                <input type="text" name="seo.twitterHandle">
+                            </div>
+                            <div class="form-group">
+                                <label>Keywords</label>
+                                <input type="text" name="seo.keywords" placeholder="Comma-separated">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Theme -->
+                    <section id="theme" class="form-section">
+                        <h2>Theme Settings</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Primary Color</label>
+                                <input type="color" name="theme.primaryColor" value="#0066ff">
+                            </div>
+                            <div class="form-group">
+                                <label>Secondary Color</label>
+                                <input type="color" name="theme.secondaryColor" value="#00cc88">
+                            </div>
+                            <div class="form-group checkbox">
+                                <label>
+                                    <input type="checkbox" name="theme.darkMode" checked>
+                                    Enable Dark Mode
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Font Family</label>
+                                <input type="text" name="theme.fontFamily" value="Inter, sans-serif">
+                            </div>
+                            <div class="form-group">
+                                <label>Layout</label>
+                                <select name="theme.layout">
+                                    <option value="modern">Modern</option>
+                                    <option value="classic">Classic</option>
+                                    <option value="minimal">Minimal</option>
+                                    <option value="creative">Creative</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Analytics -->
+                    <section id="analytics" class="form-section">
+                        <h2>Analytics</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Google Analytics ID</label>
+                                <input type="text" name="analytics.googleAnalytics">
+                            </div>
+                            <div class="form-group">
+                                <label>Plausible</label>
+                                <input type="text" name="analytics.plausible">
+                            </div>
+                            <div class="form-group">
+                                <label>Hotjar</label>
+                                <input type="text" name="analytics.hotjar">
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Import JSON Modal -->
+    <div id="import-modal" class="modal">
+        <div class="modal-content">
+            <h3>Import JSON Data</h3>
+            <textarea id="import-json-data" rows="10" placeholder="Paste your JSON here..."></textarea>
+            <div class="modal-actions">
+                <button id="confirm-import" class="btn btn-primary">Import</button>
+                <button id="close-modal" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

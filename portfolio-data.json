@@ -1,0 +1,364 @@
+{
+  "config": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-15T10:30:00Z",
+    "siteTitle": "My Portfolio",
+    "siteUrl": "https://username.github.io/portfolio",
+    "admin": {
+      "enabled": true,
+      "password": "$2a$10$X9w5Zx3Y7K8L9M0N1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U", 
+      "sessionTimeout": 30,
+      "maxLoginAttempts": 5
+    }
+  },
+
+  "sections": {
+    "personalInfo": {
+      "isActive": true,
+      "order": 1,
+      "title": "Personal Information",
+      "icon": "user",
+      "data": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "title": "Senior Full Stack Developer",
+        "email": "john@example.com",
+        "phone": "+1234567890",
+        "location": "San Francisco, CA",
+        "bio": "Passionate developer with 8+ years experience",
+        "avatar": "assets/images/avatar.jpg",
+        "resume": "assets/documents/resume.pdf"
+      }
+    },
+
+    "socialLinks": {
+      "isActive": true,
+      "order": 2,
+      "title": "Social Links",
+      "icon": "share",
+      "data": [
+        {
+          "id": "soc1",
+          "platform": "GitHub",
+          "url": "https://github.com/johndoe",
+          "username": "johndoe",
+          "icon": "github",
+          "color": "#333",
+          "isActive": true,
+          "displayOrder": 1
+        },
+        {
+          "id": "soc2",
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/in/johndoe",
+          "username": "johndoe",
+          "icon": "linkedin",
+          "color": "#0077b5",
+          "isActive": false,
+          "displayOrder": 2
+        },
+        {
+          "id": "soc3",
+          "platform": "Twitter",
+          "url": "https://twitter.com/johndoe",
+          "username": "@johndoe",
+          "icon": "twitter",
+          "color": "#1DA1F2",
+          "isActive": true,
+          "displayOrder": 3
+        }
+      ]
+    },
+
+    "skills": {
+      "isActive": true,
+      "order": 3,
+      "title": "Skills",
+      "icon": "code",
+      "data": {
+        "technical": [
+          {
+            "id": "skill1",
+            "name": "React",
+            "level": 90,
+            "category": "frontend",
+            "icon": "react",
+            "isActive": true,
+            "displayOrder": 1
+          },
+          {
+            "id": "skill2",
+            "name": "Node.js",
+            "level": 85,
+            "category": "backend",
+            "icon": "nodejs",
+            "isActive": true,
+            "displayOrder": 2
+          }
+        ]
+      }
+    },
+
+    "experience": {
+      "isActive": true,
+      "order": 4,
+      "title": "Work Experience",
+      "icon": "briefcase",
+      "data": [
+        {
+          "id": "exp1",
+          "company": "TechCorp",
+          "position": "Senior Developer",
+          "location": "San Francisco",
+          "startDate": "2020-03",
+          "endDate": null,
+          "current": true,
+          "description": "Led development of multiple projects",
+          "achievements": [
+            "Built scalable applications",
+            "Mentored junior developers"
+          ],
+          "technologies": ["React", "Node.js", "AWS"],
+          "isActive": true,
+          "displayOrder": 1
+        },
+        {
+          "id": "exp2",
+          "company": "Startup Inc",
+          "position": "Developer",
+          "location": "New York",
+          "startDate": "2017-06",
+          "endDate": "2020-02",
+          "current": false,
+          "description": "Full stack development",
+          "achievements": [
+            "Developed 5+ features",
+            "Improved performance by 40%"
+          ],
+          "technologies": ["Vue.js", "Python", "MongoDB"],
+          "isActive": true,
+          "displayOrder": 2
+        }
+      ]
+    },
+
+    "projects": {
+      "isActive": true,
+      "order": 5,
+      "title": "Projects",
+      "icon": "folder",
+      "data": [
+        {
+          "id": "proj1",
+          "name": "E-commerce Platform",
+          "description": "Full-stack e-commerce solution",
+          "longDescription": "Built with React and Node.js...",
+          "technologies": ["React", "Node.js", "MongoDB"],
+          "image": "assets/images/projects/ecommerce.jpg",
+          "githubUrl": "https://github.com/johndoe/ecommerce",
+          "liveUrl": "https://ecommerce.demo.com",
+          "featured": true,
+          "isActive": true,
+          "displayOrder": 1,
+          "tags": ["web", "fullstack", "react"],
+          "completionDate": "2023-12"
+        },
+        {
+          "id": "proj2",
+          "name": "Task Manager App",
+          "description": "Productivity application",
+          "technologies": ["Vue.js", "Firebase"],
+          "image": "assets/images/projects/taskmanager.jpg",
+          "githubUrl": "https://github.com/johndoe/taskmanager",
+          "liveUrl": null,
+          "featured": false,
+          "isActive": false,
+          "displayOrder": 2,
+          "tags": ["vue", "firebase"]
+        }
+      ]
+    },
+
+    "education": {
+      "isActive": true,
+      "order": 6,
+      "title": "Education",
+      "icon": "graduation",
+      "data": [
+        {
+          "id": "edu1",
+          "institution": "Stanford University",
+          "degree": "MS Computer Science",
+          "location": "Stanford, CA",
+          "startDate": "2013",
+          "endDate": "2015",
+          "grade": "3.9 GPA",
+          "isActive": true,
+          "displayOrder": 1
+        }
+      ]
+    },
+
+    "certifications": {
+      "isActive": true,
+      "order": 7,
+      "title": "Certifications",
+      "icon": "certificate",
+      "data": [
+        {
+          "id": "cert1",
+          "name": "AWS Solutions Architect",
+          "issuer": "Amazon",
+          "issueDate": "2023-01",
+          "expiryDate": "2026-01",
+          "credentialId": "AWS12345",
+          "credentialUrl": "https://aws.com/cert/12345",
+          "badge": "assets/images/certs/aws.png",
+          "isActive": true,
+          "displayOrder": 1
+        }
+      ]
+    },
+
+    "testimonials": {
+      "isActive": true,
+      "order": 8,
+      "title": "Testimonials",
+      "icon": "quote",
+      "data": [
+        {
+          "id": "test1",
+          "name": "Sarah Johnson",
+          "position": "CTO",
+          "company": "TechCorp",
+          "content": "John is an exceptional developer...",
+          "rating": 5,
+          "avatar": "assets/images/testimonials/sarah.jpg",
+          "isActive": true,
+          "displayOrder": 1
+        }
+      ]
+    },
+
+    "blog": {
+      "isActive": true,
+      "order": 9,
+      "title": "Blog Posts",
+      "icon": "blog",
+      "data": [
+        {
+          "id": "blog1",
+          "title": "Understanding React Hooks",
+          "slug": "understanding-react-hooks",
+          "excerpt": "Deep dive into React Hooks...",
+          "date": "2024-01-10",
+          "category": "React",
+          "tags": ["react", "hooks", "javascript"],
+          "readingTime": 5,
+          "featuredImage": "assets/images/blog/react-hooks.jpg",
+          "isActive": true,
+          "displayOrder": 1
+        }
+      ]
+    },
+
+    "achievements": {
+      "isActive": true,
+      "order": 10,
+      "title": "Achievements",
+      "icon": "trophy",
+      "data": [
+        {
+          "id": "ach1",
+          "title": "Google Developer Expert",
+          "description": "Recognized for web technologies",
+          "date": "2023",
+          "issuer": "Google",
+          "icon": "assets/images/achievements/gde.png",
+          "isActive": true,
+          "displayOrder": 1
+        }
+      ]
+    },
+
+    "services": {
+      "isActive": false,
+      "order": 11,
+      "title": "Services",
+      "icon": "service",
+      "data": [
+        {
+          "id": "serv1",
+          "name": "Web Development",
+          "description": "Full-stack web applications",
+          "price": "Contact for pricing",
+          "isActive": true,
+          "displayOrder": 1
+        }
+      ]
+    },
+
+    "volunteering": {
+      "isActive": false,
+      "order": 12,
+      "title": "Volunteering",
+      "icon": "heart",
+      "data": [
+        {
+          "id": "vol1",
+          "organization": "Code for Good",
+          "role": "Mentor",
+          "description": "Teaching coding to underprivileged youth",
+          "startDate": "2022",
+          "endDate": "Present",
+          "isActive": true,
+          "displayOrder": 1
+        }
+      ]
+    },
+
+    "contact": {
+      "isActive": true,
+      "order": 13,
+      "title": "Contact",
+      "icon": "mail",
+      "data": {
+        "email": "contact@johndoe.dev",
+        "phone": "+1234567890",
+        "address": "San Francisco, CA",
+        "contactForm": true,
+        "calendarUrl": "https://calendly.com/johndoe",
+        "availability": "Weekdays 9am-6pm PST"
+      }
+    }
+  },
+
+  "theme": {
+    "isActive": true,
+    "primaryColor": "#3b82f6",
+    "secondaryColor": "#10b981",
+    "backgroundColor": "#ffffff",
+    "textColor": "#1f2937",
+    "darkMode": true,
+    "fontFamily": "Inter",
+    "layout": "modern"
+  },
+
+  "seo": {
+    "isActive": true,
+    "title": "John Doe - Full Stack Developer",
+    "description": "Portfolio of John Doe",
+    "keywords": ["developer", "portfolio", "full stack"],
+    "ogImage": "assets/images/og-image.jpg"
+  },
+
+  "navigation": {
+    "isActive": true,
+    "items": [
+      { "name": "Home", "path": "/", "isActive": true, "order": 1 },
+      { "name": "Projects", "path": "/projects", "isActive": true, "order": 2 },
+      { "name": "Blog", "path": "/blog", "isActive": true, "order": 3 },
+      { "name": "Contact", "path": "/contact", "isActive": true, "order": 4 }
+    ]
+  }
+}

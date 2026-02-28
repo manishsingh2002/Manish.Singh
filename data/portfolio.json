@@ -1,0 +1,535 @@
+{
+  "schemaVersion": "1.0.0",
+  "personalInfo": {
+    "name": "Alex Chen",
+    "title": "Full Stack Developer",
+    "tagline": "Building scalable web applications with modern technologies",
+    "email": "alex@chen.dev",
+    "phone": "+1 (555) 123-4567",
+    "location": {
+      "city": "San Francisco",
+      "country": "USA",
+      "timezone": "PST",
+      "remote": true
+    },
+    "profileImage": {
+      "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+      "alt": "Alex Chen - Full Stack Developer"
+    },
+    "socialProfiles": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/alexchen",
+        "username": "alexchen",
+        "display": true
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/alexchen",
+        "username": "alexchen",
+        "display": true
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/alexchen",
+        "username": "alexchen",
+        "display": true
+      }
+    ],
+    "pronouns": "he/him"
+  },
+  "professionalSummary": {
+    "summary": "Full Stack Developer with 8+ years of experience building web applications. Passionate about clean code, user experience, and solving complex problems.",
+    "detailedBio": "I'm a software developer based in San Francisco with a passion for creating elegant solutions to complex problems. Over the past 8 years, I've worked with startups and enterprise companies alike, helping them build scalable web applications that users love. When I'm not coding, you can find me hiking, reading tech blogs, or contributing to open source projects.",
+    "yearsOfExperience": 8,
+    "availableForHire": true,
+    "openToWork": {
+      "status": true,
+      "positions": ["Senior Developer", "Tech Lead", "Full Stack Developer"],
+      "locations": ["San Francisco", "Remote"],
+      "workTypes": ["Full-time", "Contract", "Remote"]
+    },
+    "resume": {
+      "url": "/resume.pdf",
+      "lastUpdated": "2024-01-15",
+      "format": "PDF"
+    }
+  },
+  "technicalSkills": {
+    "languages": [
+      {
+        "name": "JavaScript",
+        "proficiency": 95,
+        "yearsUsed": 8,
+        "favorite": true,
+        "color": "#f7df1e"
+      },
+      {
+        "name": "TypeScript",
+        "proficiency": 90,
+        "yearsUsed": 4,
+        "favorite": true,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Python",
+        "proficiency": 85,
+        "yearsUsed": 6,
+        "favorite": false,
+        "color": "#3776ab"
+      },
+      {
+        "name": "Go",
+        "proficiency": 70,
+        "yearsUsed": 2,
+        "favorite": false,
+        "color": "#00add8"
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "React",
+        "proficiency": 95,
+        "yearsUsed": 6,
+        "relatedTo": ["JavaScript", "TypeScript"]
+      },
+      {
+        "name": "Node.js",
+        "proficiency": 90,
+        "yearsUsed": 7,
+        "relatedTo": ["JavaScript", "TypeScript"]
+      },
+      {
+        "name": "Next.js",
+        "proficiency": 85,
+        "yearsUsed": 3,
+        "relatedTo": ["React", "TypeScript"]
+      },
+      {
+        "name": "Django",
+        "proficiency": 80,
+        "yearsUsed": 4,
+        "relatedTo": ["Python"]
+      }
+    ],
+    "databases": [
+      {
+        "name": "PostgreSQL",
+        "type": "SQL",
+        "proficiency": 90
+      },
+      {
+        "name": "MongoDB",
+        "type": "NoSQL",
+        "proficiency": 85
+      },
+      {
+        "name": "Redis",
+        "type": "NoSQL",
+        "proficiency": 75
+      }
+    ],
+    "devTools": [
+      {
+        "name": "Git",
+        "category": "Version Control",
+        "proficiency": 95
+      },
+      {
+        "name": "Docker",
+        "category": "Deployment",
+        "proficiency": 85
+      },
+      {
+        "name": "Jest",
+        "category": "Testing",
+        "proficiency": 80
+      },
+      {
+        "name": "Webpack",
+        "category": "Build Tools",
+        "proficiency": 75
+      }
+    ],
+    "specialties": [
+      "Frontend Architecture",
+      "Performance Optimization",
+      "API Design",
+      "Cloud Deployment"
+    ]
+  },
+  "projects": [
+    {
+      "id": "eco-track",
+      "title": "EcoTrack",
+      "slug": "eco-track",
+      "subtitle": "Carbon footprint tracking application",
+      "description": "EcoTrack is a comprehensive carbon footprint tracking application that helps individuals and businesses monitor and reduce their environmental impact. The app provides detailed analytics, personalized recommendations, and gamification elements to encourage sustainable behavior.",
+      "shortDescription": "Carbon footprint tracking with analytics and recommendations",
+      "coverImage": {
+        "url": "https://images.unsplash.com/photo-1611273426858-450d8e3c9f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "alt": "EcoTrack Dashboard",
+        "thumbnail": "https://images.unsplash.com/photo-1611273426858-450d8e3c9f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      },
+      "technologies": [
+        { "name": "React", "category": "Frontend", "version": "18.2" },
+        { "name": "Node.js", "category": "Backend", "version": "18" },
+        { "name": "MongoDB", "category": "Database", "version": "6" },
+        { "name": "Docker", "category": "DevOps", "version": "20" }
+      ],
+      "features": [
+        "Real-time carbon footprint calculation",
+        "Personalized reduction recommendations",
+        "Gamification with badges and challenges",
+        "Team and company tracking",
+        "API for third-party integration"
+      ],
+      "challenges": "The main challenge was accurately calculating carbon footprints based on various data sources. We implemented a flexible calculation engine that can handle different input types and provide consistent results.",
+      "learnings": "Learned about environmental science, complex data processing, and building engaging user experiences for serious topics.",
+      "role": "Lead Developer - Designed architecture and implemented core features",
+      "links": {
+        "live": "https://ecotrack.app",
+        "github": "https://github.com/alexchen/ecotrack",
+        "demo": "https://demo.ecotrack.app",
+        "caseStudy": "https://alexchen.dev/case-studies/ecotrack"
+      },
+      "stats": {
+        "stars": 245,
+        "forks": 67,
+        "users": 15000
+      },
+      "date": {
+        "started": "2022-01-15",
+        "completed": "2022-08-30",
+        "lastUpdated": "2024-01-10"
+      },
+      "status": "Completed",
+      "featured": true,
+      "category": "Web App",
+      "tags": ["sustainability", "analytics", "gamification"]
+    },
+    {
+      "id": "dev-portfolio",
+      "title": "Developer Portfolio",
+      "slug": "dev-portfolio",
+      "subtitle": "Dynamic portfolio website with admin panel",
+      "description": "A comprehensive developer portfolio website with a complete admin panel for managing all content. Built with vanilla JavaScript and follows a complete JSON schema for all portfolio data.",
+      "shortDescription": "Dynamic portfolio with admin panel",
+      "coverImage": {
+        "url": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "alt": "Portfolio Website",
+        "thumbnail": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      },
+      "technologies": [
+        { "name": "HTML5", "category": "Frontend" },
+        { "name": "CSS3", "category": "Frontend" },
+        { "name": "JavaScript", "category": "Frontend" },
+        { "name": "JSON Schema", "category": "Data" }
+      ],
+      "features": [
+        "Complete portfolio schema covering all aspects",
+        "Admin panel with CRUD operations",
+        "Dynamic rendering of all sections",
+        "Theme customization",
+        "Export/Import functionality"
+      ],
+      "links": {
+        "live": "https://alexchen.dev",
+        "github": "https://github.com/alexchen/portfolio"
+      },
+      "stats": {
+        "stars": 89,
+        "forks": 23
+      },
+      "date": {
+        "started": "2023-11-01",
+        "completed": "2023-12-15"
+      },
+      "status": "Completed",
+      "featured": true,
+      "category": "Web App",
+      "tags": ["portfolio", "admin", "schema"]
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "TechCorp",
+      "position": "Senior Full Stack Developer",
+      "location": "San Francisco, CA",
+      "remote": false,
+      "startDate": "2020-03-01",
+      "current": true,
+      "description": "Leading development of enterprise web applications and mentoring junior developers.",
+      "achievements": [
+        "Led migration of legacy system to microservices architecture, improving scalability by 200%",
+        "Implemented CI/CD pipeline reducing deployment time by 60%",
+        "Mentored 5 junior developers who were promoted within 2 years",
+        "Optimized database queries resulting in 40% faster page loads"
+      ],
+      "technologies": ["React", "Node.js", "PostgreSQL", "AWS", "Docker"],
+      "companyLogo": {
+        "url": "https://via.placeholder.com/100",
+        "alt": "TechCorp Logo"
+      },
+      "companyUrl": "https://techcorp.com"
+    },
+    {
+      "company": "StartupHub",
+      "position": "Full Stack Developer",
+      "location": "Remote",
+      "remote": true,
+      "startDate": "2017-06-01",
+      "endDate": "2020-02-28",
+      "current": false,
+      "description": "Developed and maintained multiple client projects from scratch.",
+      "achievements": [
+        "Built 5 full-stack applications from concept to production",
+        "Reduced development time by 30% by creating reusable component library",
+        "Implemented real-time features using WebSockets",
+        "Won 'Best Developer' award two years in a row"
+      ],
+      "technologies": ["Vue.js", "Express", "MongoDB", "Firebase"],
+      "companyLogo": {
+        "url": "https://via.placeholder.com/100",
+        "alt": "StartupHub Logo"
+      },
+      "companyUrl": "https://startuphub.io"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stanford University",
+      "degree": "Master of Science",
+      "fieldOfStudy": "Computer Science",
+      "startDate": "2015-09-01",
+      "endDate": "2017-06-01",
+      "current": false,
+      "grade": "3.9 GPA",
+      "activities": ["Teaching Assistant", "AI Research Group"],
+      "description": "Focused on distributed systems and machine learning.",
+      "logo": "https://via.placeholder.com/100"
+    },
+    {
+      "institution": "UC Berkeley",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science",
+      "startDate": "2011-09-01",
+      "endDate": "2015-05-01",
+      "current": false,
+      "grade": "3.8 GPA",
+      "activities": ["Hackathon Organizer", "CS Club President"],
+      "description": "Graduated with honors. Senior thesis on web accessibility.",
+      "logo": "https://via.placeholder.com/100"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuingOrganization": "Amazon Web Services",
+      "dateIssued": "2023-01-15",
+      "expirationDate": "2026-01-15",
+      "credentialId": "AWS-12345",
+      "credentialUrl": "https://aws.amazon.com/certification",
+      "logo": "https://via.placeholder.com/100"
+    },
+    {
+      "name": "Professional Scrum Master I",
+      "issuingOrganization": "Scrum.org",
+      "dateIssued": "2022-06-10",
+      "credentialId": "PSM-67890",
+      "credentialUrl": "https://scrum.org",
+      "logo": "https://via.placeholder.com/100"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Best Innovation Award",
+      "description": "Won Best Innovation Award at TechCrunch Disrupt for EcoTrack",
+      "date": "2022-09-15",
+      "issuer": "TechCrunch",
+      "type": "Award"
+    },
+    {
+      "title": "Open Source Contributor of the Year",
+      "description": "Recognized for contributions to React ecosystem",
+      "date": "2023-03-20",
+      "issuer": "GitHub",
+      "type": "Recognition"
+    }
+  ],
+  "blog": {
+    "platform": "Dev.to",
+    "posts": [
+      {
+        "title": "Building Scalable React Applications",
+        "url": "https://dev.to/alexchen/building-scalable-react-applications",
+        "date": "2023-10-15",
+        "description": "Learn how to structure large React applications for maintainability and performance",
+        "tags": ["react", "javascript", "architecture"],
+        "readingTime": 8,
+        "featured": true
+      },
+      {
+        "title": "Introduction to Microservices",
+        "url": "https://dev.to/alexchen/introduction-to-microservices",
+        "date": "2023-08-22",
+        "description": "A beginner's guide to microservices architecture",
+        "tags": ["microservices", "architecture", "devops"],
+        "readingTime": 10,
+        "featured": false
+      }
+    ]
+  },
+  "talks": [
+    {
+      "title": "The Future of Web Development",
+      "event": "TechConf 2023",
+      "date": "2023-05-10",
+      "location": "San Francisco, CA",
+      "slidesUrl": "https://speakerdeck.com/alexchen/future-web",
+      "videoUrl": "https://youtube.com/watch?v=12345",
+      "description": "Keynote presentation on emerging trends in web development"
+    }
+  ],
+  "openSource": [
+    {
+      "repository": "react-advanced-hooks",
+      "url": "https://github.com/alexchen/react-advanced-hooks",
+      "description": "A collection of advanced React hooks for common use cases",
+      "contributions": ["Creator", "Maintainer"],
+      "mergedPRs": 45,
+      "status": "Active"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "position": "CTO",
+      "company": "TechCorp",
+      "content": "Alex is an exceptional developer who consistently delivers high-quality work. His technical skills and problem-solving abilities are outstanding.",
+      "avatar": "https://images.unsplash.com/photo-1494790108777-296ef5a5c3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
+      "linkedin": "https://linkedin.com/in/sarahjohnson",
+      "date": "2023-12-01",
+      "relationship": "Manager"
+    },
+    {
+      "name": "Mike Williams",
+      "position": "Lead Developer",
+      "company": "StartupHub",
+      "content": "Working with Alex was a pleasure. He's not only technically proficient but also great at communicating complex ideas.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
+      "linkedin": "https://linkedin.com/in/mikewilliams",
+      "date": "2023-11-15",
+      "relationship": "Colleague"
+    }
+  ],
+  "services": [
+    {
+      "name": "Full Stack Development",
+      "description": "End-to-end web application development using modern technologies",
+      "price": {
+        "amount": 150,
+        "currency": "USD",
+        "unit": "hour"
+      },
+      "icon": "code"
+    },
+    {
+      "name": "Technical Consulting",
+      "description": "Architecture review, code optimization, and team mentoring",
+      "price": {
+        "amount": 200,
+        "currency": "USD",
+        "unit": "hour"
+      },
+      "icon": "comments"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Hiking",
+      "description": "Exploring national parks and trails",
+      "icon": "hiking"
+    },
+    {
+      "name": "Photography",
+      "description": "Street and landscape photography",
+      "icon": "camera"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Native"
+    },
+    {
+      "language": "Spanish",
+      "proficiency": "Fluent"
+    },
+    {
+      "language": "Mandarin",
+      "proficiency": "Intermediate"
+    }
+  ],
+  "contact": {
+    "email": "alex@chen.dev",
+    "contactForm": {
+      "enabled": true,
+      "endpoint": "/api/contact",
+      "recaptcha": true,
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true,
+          "placeholder": "Your Name"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": true,
+          "placeholder": "Your Email"
+        },
+        {
+          "name": "message",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "Your Message"
+        }
+      ]
+    },
+    "calendly": "https://calendly.com/alexchen"
+  },
+  "seo": {
+    "title": "Alex Chen - Full Stack Developer",
+    "description": "Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio and projects.",
+    "keywords": ["developer", "full stack", "react", "node.js", "portfolio"],
+    "author": "Alex Chen",
+    "ogImage": "https://alexchen.dev/og-image.jpg",
+    "favicon": "/favicon.ico",
+    "canonicalUrl": "https://alexchen.dev",
+    "twitterHandle": "@alexchen",
+    "robots": "index, follow"
+  },
+  "theme": {
+    "primaryColor": "#0066ff",
+    "secondaryColor": "#00cc88",
+    "darkMode": true,
+    "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    "layout": "modern"
+  },
+  "analytics": {
+    "googleAnalytics": "G-XXXXXXXXXX",
+    "plausible": "alexchen.dev",
+    "hotjar": "123456"
+  },
+  "meta": {
+    "lastUpdated": "2024-01-15T10:30:00Z",
+    "version": "1.0.0",
+    "buildInfo": {
+      "framework": "Vanilla JS",
+      "generator": "Portfolio Admin",
+      "environment": "production"
+    }
+  }
+}

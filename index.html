@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Developer Portfolio</title>
+
+    <meta id="meta-description" name="description" content="">
+    <meta id="meta-keywords" name="keywords" content="">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary-color)',
+                        secondary: 'var(--secondary-color)',
+                    },
+                    fontFamily: {
+                        sans: ['var(--font-family)', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Variables - Will be overridden by JSON */
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --font-family: 'Inter';
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .glass-panel {
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans antialiased transition-colors duration-300">
+
+    <nav class="fixed w-full z-40 glass-panel border-b-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <span id="nav-logo" class="font-bold text-xl tracking-wider text-white"></span>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-primary transition-colors">About</a>
+                        <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+                        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                        <a href="#content" class="hover:text-primary transition-colors">Content</a>
+                        <a href="#contact"
+                            class="bg-primary hover:opacity-90 text-white px-4 py-2 rounded-md font-medium transition-all">Hire
+                            Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <section id="hero" class="min-h-[90vh] flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 order-2 lg:order-1">
+                    <div id="open-to-work-badge"
+                        class="hidden inline-flex items-center px-3 py-1 rounded-full bg-green-900/30 text-green-400 border border-green-800 text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                        Available for new opportunities
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight">
+                        Hi, I'm <br /><span id="hero-name" class="text-gradient"></span>
+                    </h1>
+                    <h2 id="hero-title" class="text-2xl md:text-3xl text-gray-300 font-medium"></h2>
+                    <p id="hero-bio" class="text-lg text-gray-400 max-w-2xl leading-relaxed"></p>
+
+                    <div id="hero-social" class="flex space-x-4 pt-4">
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <div
+                        class="relative w-64 h-64 md:w-96 md:h-96 rounded-full p-2 border-4 border-gray-800 shadow-2xl overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary opacity-20 group-hover:opacity-40 transition-opacity">
+                        </div>
+                        <img id="hero-img" src="" alt="" class="w-full h-full object-cover rounded-full z-10 relative">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-gray-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Technical Arsenal & Services</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16" id="services-container">
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" id="skills-container">
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Journey & Milestones</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 flex items-center"><i
+                                class="fas fa-briefcase text-primary mr-3"></i> Work Experience</h3>
+                        <div id="experience-container" class="space-y-8 border-l-2 border-gray-700 ml-3 pl-8">
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 flex items-center"><i
+                                class="fas fa-graduation-cap text-primary mr-3"></i> Education & Certs</h3>
+                        <div id="education-container" class="space-y-8 border-l-2 border-gray-700 ml-3 pl-8 mb-8">
+                        </div>
+                        <div id="certs-container" class="space-y-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-gray-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Featured Projects</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Click "Live Preview" to test applications directly inside
+                        the browser.</p>
+                    <div class="w-24 h-1 bg-primary mx-auto rounded mt-4"></div>
+                </div>
+
+                <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+            </div>
+        </section>
+
+        <section id="content" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Community & Content</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div id="blog-container">
+                        <h3 class="text-xl font-bold mb-6 text-gray-300">Recent Articles</h3>
+                    </div>
+                    <div id="os-container">
+                        <h3 class="text-xl font-bold mb-6 text-gray-300">Open Source & Talks</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 bg-gray-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">What People Say</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+                </div>
+                <div id="testimonials-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 py-8 border-t border-gray-800 text-center text-gray-400">
+        <p>© <span id="year"></span> <span id="footer-name"></span>. Built dynamically via JSON Schema.</p>
+    </footer>
+
+    <div id="iframe-modal"
+        class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-10 opacity-0 transition-opacity duration-300">
+        <div class="bg-gray-900 w-full max-w-7xl h-full max-h-[90vh] rounded-xl border border-gray-700 shadow-2xl flex flex-col overflow-hidden transform scale-95 transition-transform duration-300"
+            id="iframe-content">
+            <div class="p-4 bg-gray-800 border-b border-gray-700 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span id="modal-title" class="ml-4 font-semibold text-white"></span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a id="modal-external-link" href="#" target="_blank" class="text-gray-400 hover:text-white"
+                        title="Open in new tab">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button onclick="closeIframeModal()" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex-1 w-full bg-white relative">
+                <div id="iframe-loader" class="absolute inset-0 flex items-center justify-center bg-gray-900">
+                    <i class="fas fa-spinner fa-spin text-4xl text-primary"></i>
+                </div>
+                <iframe id="project-iframe" class="w-full h-full border-0 hidden"
+                    onload="document.getElementById('iframe-loader').classList.add('hidden'); this.classList.remove('hidden');"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch JSON (ensure path is correct)
+                const response = await fetch('./data/portfolio.json');
+                const data = await response.json();
+                console.log(response)
+                // Setup Core
+                applyThemeAndSEO(data);
+
+                // Render Sections
+                renderHero(data.personalInfo, data.professionalSummary);
+                renderServices(data.services);
+                renderSkills(data.technicalSkills);
+                renderExperience(data.workExperience);
+                renderEducation(data.education, data.certifications);
+                renderProjects(data.projects);
+                renderContent(data.blog, data.openSource, data.talks);
+                renderTestimonials(data.testimonials);
+
+                // Utilities
+                document.getElementById('year').textContent = new Date().getFullYear();
+                document.getElementById('footer-name').textContent = data.personalInfo.name;
+
+            } catch (error) {
+                console.error("Data load failed:", error);
+                document.body.innerHTML = `<div class="flex h-screen items-center justify-center"><h2 class="text-2xl text-red-500">Error loading portfolio data. Verify data/portfolio.json exists.</h2></div>`;
+            }
+        });
+
+        function applyThemeAndSEO(data) {
+            const root = document.documentElement;
+            root.style.setProperty('--primary-color', data.theme.primaryColor);
+            root.style.setProperty('--secondary-color', data.theme.secondaryColor);
+            root.style.setProperty('--font-family', data.theme.fontFamily.split(',')[0].replace(/'/g, ''));
+
+            document.title = data.seo.title;
+            document.getElementById('meta-description').content = data.seo.description;
+            document.getElementById('nav-logo').textContent = `<${data.personalInfo.name.split(' ')[0]} />`;
+
+            if (data.theme.darkMode) {
+                document.documentElement.classList.add('dark');
+            }
+        }
+
+        function renderHero(personal, professional) {
+            document.getElementById('hero-name').textContent = personal.name;
+            document.getElementById('hero-title').textContent = personal.title;
+            document.getElementById('hero-bio').textContent = professional.detailedBio;
+
+            const img = document.getElementById('hero-img');
+            img.src = personal.profileImage.url;
+            img.alt = personal.profileImage.alt;
+
+            if (professional.openToWork.status) {
+                document.getElementById('open-to-work-badge').classList.remove('hidden');
+            }
+
+            const socialHTML = personal.socialProfiles.filter(s => s.display).map(s => {
+                let iconClass = 'fas fa-link';
+                if (s.platform.toLowerCase() === 'github') iconClass = 'fab fa-github';
+                if (s.platform.toLowerCase() === 'linkedin') iconClass = 'fab fa-linkedin';
+                if (s.platform.toLowerCase() === 'twitter') iconClass = 'fab fa-twitter';
+
+                return `<a href="${s.url}" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all shadow-lg hover:-translate-y-1">
+                            <i class="${iconClass} text-lg"></i>
+                        </a>`;
+            }).join('');
+            document.getElementById('hero-social').innerHTML = socialHTML;
+        }
+
+        function renderServices(services) {
+            if (!services) return;
+            const html = services.map(s => `
+                <div class="glass-panel p-6 rounded-xl border border-gray-700 hover:border-primary transition-colors group">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors text-primary group-hover:text-white">
+                        <i class="fas fa-${s.icon || 'code'} text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">${s.name}</h3>
+                    <p class="text-gray-400 text-sm">${s.description}</p>
+                </div>
+            `).join('');
+            document.getElementById('services-container').innerHTML = html;
+        }
+
+        function renderSkills(skills) {
+            const makeSkillSection = (title, items, isProgress = false) => `
+                <div class="bg-gray-900 rounded-xl p-6 border border-gray-800">
+                    <h3 class="text-xl font-bold text-white mb-6">${title}</h3>
+                    <div class="${isProgress ? 'space-y-4' : 'flex flex-wrap gap-2'}">
+                        ${items.map(item => isProgress ? `
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-300">${item.name}</span>
+                                    <span class="text-sm font-medium text-gray-500">${item.proficiency}%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: ${item.proficiency}%"></div>
+                                </div>
+                            </div>
+                        ` : `
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm border border-gray-700 hover:border-primary transition-colors">${item.name}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            const html =
+                makeSkillSection('Languages', skills.languages, true) +
+                makeSkillSection('Frameworks', skills.frameworks, true) +
+                makeSkillSection('Databases & Tools', [...skills.databases, ...skills.devTools], false);
+
+            document.getElementById('skills-container').innerHTML = html;
+        }
+
+        function renderExperience(expArr) {
+            const html = expArr.map(job => `
+                <div class="relative group">
+                    <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 border-gray-900 group-hover:bg-primary transition-colors"></div>
+                    <span class="text-primary text-sm font-bold tracking-wider uppercase">${job.startDate.substring(0, 4)} — ${job.current ? 'Present' : job.endDate.substring(0, 4)}</span>
+                    <h4 class="text-xl font-bold text-white mt-1">${job.position}</h4>
+                    <span class="text-gray-400 text-sm block mb-4">${job.company} • ${job.location}</span>
+                    <p class="text-gray-400 text-sm mb-3">${job.description}</p>
+                    <ul class="list-disc list-inside text-sm text-gray-300 space-y-1">
+                        ${job.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+            document.getElementById('experience-container').innerHTML = html;
+        }
+
+        function renderEducation(eduArr, certsArr) {
+            const eduHtml = eduArr.map(edu => `
+                <div class="relative group">
+                    <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 border-gray-900 group-hover:secondary transition-colors"></div>
+                    <span class="text-secondary text-sm font-bold tracking-wider uppercase">${edu.startDate.substring(0, 4)} — ${edu.endDate.substring(0, 4)}</span>
+                    <h4 class="text-xl font-bold text-white mt-1">${edu.degree}</h4>
+                    <span class="text-gray-400 text-sm block mb-2">${edu.institution}</span>
+                    <p class="text-gray-400 text-sm">${edu.description}</p>
+                </div>
+            `).join('');
+            document.getElementById('education-container').innerHTML = eduHtml;
+
+            const certsHtml = certsArr.map(cert => `
+                <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+                    <i class="fas fa-certificate text-2xl text-secondary mr-4"></i>
+                    <div>
+                        <h5 class="font-bold text-white">${cert.name}</h5>
+                        <p class="text-sm text-gray-400">${cert.issuingOrganization} • ${cert.dateIssued.substring(0, 4)}</p>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('certs-container').innerHTML = certsHtml;
+        }
+
+        function renderProjects(projectsArr) {
+            const html = projectsArr.map(p => `
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 group flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <div class="absolute inset-0 bg-gray-900/40 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="${p.coverImage.url}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2">${p.title}</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-1">${p.shortDescription}</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            ${p.technologies.slice(0, 3).map(t => `<span class="text-xs font-medium px-2 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">${t.name}</span>`).join('')}
+                            ${p.technologies.length > 3 ? `<span class="text-xs font-medium px-2 py-1 bg-gray-900 text-gray-400 rounded">+${p.technologies.length - 3}</span>` : ''}
+                        </div>
+                        
+                        <div class="flex space-x-3 mt-auto">
+                            ${p.links.live ? `
+                                <button onclick="openIframeModal('${p.links.live}', '${p.title}')" class="flex-1 bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white py-2 rounded transition-colors text-sm font-bold flex items-center justify-center">
+                                    <i class="fas fa-play mr-2"></i> Live Preview
+                                </button>
+                            ` : ''}
+                            ${p.links.github ? `
+                                <a href="${p.links.github}" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-700 text-white rounded hover:bg-gray-600 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('projects-container').innerHTML = html;
+        }
+
+        function renderContent(blog, os, talks) {
+            const blogHtml = blog.posts.map(post => `
+                <a href="${post.url}" target="_blank" class="block bg-gray-800 p-5 rounded-lg border border-gray-700 hover:border-primary transition-colors mb-4 group">
+                    <span class="text-xs text-primary font-bold mb-1 block">${post.date.substring(0, 10)}</span>
+                    <h4 class="text-lg font-bold text-white group-hover:text-primary transition-colors">${post.title}</h4>
+                    <p class="text-sm text-gray-400 mt-2 line-clamp-2">${post.description}</p>
+                </a>
+            `).join('');
+            document.getElementById('blog-container').innerHTML += blogHtml;
+
+            let osHtml = os.map(repo => `
+                <a href="${repo.url}" target="_blank" class="flex items-center justify-between bg-gray-800 p-5 rounded-lg border border-gray-700 hover:border-secondary transition-colors mb-4">
+                    <div>
+                        <h4 class="font-bold text-white"><i class="fab fa-github mr-2 text-gray-400"></i>${repo.repository}</h4>
+                        <p class="text-sm text-gray-400 mt-1">${repo.description}</p>
+                    </div>
+                    <span class="text-xs bg-gray-900 px-2 py-1 rounded text-secondary border border-gray-700">${repo.status}</span>
+                </a>
+            `).join('');
+
+            osHtml += talks.map(talk => `
+                <a href="${talk.videoUrl}" target="_blank" class="flex items-center justify-between bg-gray-800 p-5 rounded-lg border border-gray-700 hover:border-red-500 transition-colors mb-4">
+                    <div>
+                        <h4 class="font-bold text-white"><i class="fab fa-youtube mr-2 text-red-500"></i>${talk.title}</h4>
+                        <p class="text-sm text-gray-400 mt-1">${talk.event} • ${talk.location}</p>
+                    </div>
+                </a>
+            `).join('');
+            document.getElementById('os-container').innerHTML += osHtml;
+        }
+
+        function renderTestimonials(testimonialsArr) {
+            const html = testimonialsArr.map(t => `
+                <div class="bg-gray-800 p-8 rounded-xl relative">
+                    <i class="fas fa-quote-left absolute top-6 right-8 text-4xl text-gray-700/50"></i>
+                    <p class="text-gray-300 italic mb-6 relative z-10">"${t.content}"</p>
+                    <div class="flex items-center">
+                        <img src="${t.avatar}" alt="${t.name}" class="w-12 h-12 rounded-full mr-4 object-cover border-2 border-gray-700">
+                        <div>
+                            <h5 class="text-white font-bold">${t.name}</h5>
+                            <span class="text-sm text-gray-400">${t.position} at ${t.company}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('testimonials-container').innerHTML = html;
+        }
+
+        // --- IFRAME MODAL LOGIC ---
+        const modal = document.getElementById('iframe-modal');
+        const modalContent = document.getElementById('iframe-content');
+        const iframe = document.getElementById('project-iframe');
+        const iframeLoader = document.getElementById('iframe-loader');
+
+        function openIframeModal(url, title) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-external-link').href = url;
+
+            // Reset state
+            iframe.classList.add('hidden');
+            iframeLoader.classList.remove('hidden');
+            iframe.src = url;
+
+            // Show Modal with Animation
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeIframeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                iframe.src = ''; // Stop video/audio from playing in background
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Close modal on Escape key or clicking outside
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeIframeModal();
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeIframeModal();
+        });
+
+    </script>
+</body>
+
+</html>
